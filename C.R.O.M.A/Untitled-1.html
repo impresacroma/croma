@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<title>CROMA | Cultural Reality & Online Multi-Augmentation</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+            font-family: 'Roboto', sans-serif;
+
+        }
+ 
+        body {
+
+            background-color: #0a0a0a;
+
+            color: #ffffff;
+
+        }
+ 
+        .navbar {
+
+            padding: 1.5rem 5%;
+
+            background-color: rgba(10, 10, 10, 0.95);
+
+            position: fixed;
+
+            width: 100%;
+
+            z-index: 1000;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+        }
+ 
+        .logo {
+
+            font-size: 2rem;
+
+            color:#fff;
+
+            text-decoration: none;
+
+            font-weight: 700;
+
+        }
+ 
+        .nav-links {
+
+            display: flex;
+
+            gap: 2rem;
+
+        }
+ 
+        .nav-links a {
+
+            color: #fff;
+
+            text-decoration: none;
+
+            transition: color 0.3s;
+
+        }
+ 
+        .nav-links a:hover {
+
+            color: 4d53ff;
+
+        }
+ 
+        .hero {
+
+            height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            background: linear-gradient(45deg, #0a0a0a 30%, #6375ff 170%);s
+
+        }
+ 
+        .hero-content {
+
+            max-width: 800px;
+
+            padding: 2rem;
+
+        }
+ 
+        .hero h1 {
+
+            font-size: 3.5rem;
+
+            margin-bottom: 1rem;
+
+            animation: fadeInUp 1s ease;
+
+        }
+ 
+        .cta-button {
+
+            display: inline-block;
+
+            padding: 1rem 2rem;
+
+            background-color: #16c5ff;
+
+            color: #0a0a0a;
+
+            text-decoration: none;
+
+            border-radius: 5px;
+
+            margin-top: 2rem;
+
+            transition: transform 0.3s;
+
+        }
+ 
+        .cta-button:hover {
+
+            transform: scale(1.05);
+
+        }
+ 
+        .section {
+
+            padding: 5rem 5%;
+
+        }
+ 
+        .section h2 {
+
+            font-size: 2.5rem;
+
+            margin-bottom: 3rem;
+
+            color: #ffffff;
+
+        }
+ 
+        .services-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+            gap: 2rem;
+
+        }
+ 
+        .service-card {
+
+            background: rgba(255, 255, 255, 0.05);
+
+            padding: 2rem;
+
+            border-radius: 10px;
+
+            transition: transform 0.3s;
+
+        }
+ 
+        .service-card:hover {
+
+            transform: translateY(-10px);
+
+        }
+ 
+        .portfolio-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+            gap: 2rem;
+
+        }
+ 
+        .portfolio-item {
+
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 10px;
+
+        }
+ 
+        .portfolio-item img {
+
+            width: 100%;
+
+            height: 250px;
+
+            object-fit: cover;
+
+            transition: transform 0.3s;
+
+        }
+ 
+        .portfolio-item:hover img {
+
+            transform: scale(1.1);
+
+        }
+ 
+        .contact-section {
+
+            background: rgba(255, 255, 255, 0.05);
+
+            padding: 3rem;
+
+            border-radius: 10px;
+
+        }
+ 
+        form {
+
+            display: grid;
+
+            gap: 1rem;
+
+        }
+ 
+        input, textarea {
+
+            padding: 1rem;
+
+            background: rgba(255, 255, 255, 0.1);
+
+            border: none;
+
+            border-radius: 5px;
+
+            color: #fff;
+
+        }
+ 
+        footer {
+
+            background: #000000;
+
+            padding: 3rem 5%;
+
+            text-align: center;
+
+        }
+ 
+        @keyframes fadeInUp {
+
+            from {
+
+                opacity: 0;
+
+                transform: translateY(20px);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform: translateY(0);
+
+            }
+
+        }
+ 
+        @media (max-width: 768px) {
+
+            .nav-links {
+
+                display: none;
+
+            }
+
+            .hero h1 {
+
+                font-size: 2.5rem;
+
+            }
+
+        }
+
+        .fancy-link {
+        position: relative;
+        display: inline-block;
+        color: #007BFF;
+        text-decoration: none;
+        padding-bottom: 2px;
+        }
+
+        .fancy-link::after {
+      content: '';
+     position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #007BFF;
+      transition: width 0.3s ease;
+        }
+
+        .fancy-link:hover::after {
+        width: 100%;
+        }
+
+</style>
+</head>
+<body>
+<nav class="navbar">
+<a href="#" class="logo">C.R.O.M.A. | Cultural Reality & Online Multi-Augmentation</a>
+<div class="nav-links">
+<a href="#home" class="fancy-link">Home</a>
+<a href="#services" class="fancy-link">Servizi</a>
+<a href="#portfolio" class="fancy-link">Portafoglio</a>
+<a href="#contact" class="fancy-link">Contatti</a>
+</div>
+</nav>
+ 
+    <section class="hero" id="home">
+<div class="hero-content">
+<h1>Trasforma la tua realtà con soluzioni AR innovative</h1>
+<p>Creiamo esperienze immersive che rivoluzionano il modo di interagire con il mondo</p>
+<a href="#contact" class="cta-button">Inizia ora</a>
+</div>
+</section>
+ 
+    <section class="section" id="services">
+<h2>I nostri servizi</h2>
+<div class="services-grid">
+<div class="service-card">
+<i class="fas fa-cube fa-3x"></i>
+<h3>AR Enterprise Solutions</h3>
+<p>Soluzioni personalizzate per aziende che vogliono innovare</p>
+</div>
+<div class="service-card">
+<i class="fas fa-mobile-alt fa-3x"></i>
+<h3>App AR</h3>
+<p>Sviluppo applicazioni mobile per realtà aumentata</p>
+</div>
+<div class="service-card">
+<i class="fas fa-graduation-cap fa-3x"></i>
+<h3>Formazione AR</h3>
+<p>Corsi di formazione e workshop specializzati</p>
+</div>
+</div>
+</section>
+ 
+    <section class="section" id="portfolio">
+<h2>I nostri progetti</h2>
+<div class="portfolio-grid">
+<div class="portfolio-item">
+<img src="ar-project1.jpg" alt="Progetto AR 1">
+</div>
+<div class="portfolio-item">
+<img src="ar-project2.jpg" alt="Progetto AR 2">
+</div>
+<div class="portfolio-item">
+<img src="ar-project3.jpg" alt="Progetto AR 3">
+</div>
+</div>
+</section>
+ 
+    <section class="section" id="contact">
+<div class="contact-section">
+<h2>Contattaci</h2>
+<form>
+<input type="text" placeholder="Nome" required>
+<input type="email" placeholder="Email" required>
+<textarea rows="5" placeholder="Messaggio" required></textarea>
+<button type="submit" class="cta-button">Invia messaggio</button>
+</form>
+</div>
+</section>
+ 
+    <footer>
+<p>© 2023 AR Tech Solutions. Tutti i diritti riservati.</p>
+<div class="social-icons">
+<a href="#"><i class="fab fa-facebook"></i></a>
+<a href="#"><i class="fab fa-linkedin"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+</div>
+</footer>
+ 
+    <script>
+
+        // Smooth scrolling per i link di navigazione
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+            anchor.addEventListener('click', function (e) {
+
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+
+                    behavior: 'smooth'
+
+                });
+
+            });
+
+        });
+ 
+        // Animazione al scroll
+
+        window.addEventListener('scroll', function() {
+
+            const elements = document.querySelectorAll('.service-card, .portfolio-item');
+
+            elements.forEach(element => {
+
+                const elementTop = element.getBoundingClientRect().top;
+
+                if(elementTop < window.innerHeight - 100) {
+
+                    element.style.opacity = '1';
+
+                    element.style.transform = 'translateY(0)';
+
+                }
+
+            });
+
+        });
+ 
+        // Menu mobile
+
+        const menuToggle = document.querySelector('.menu-toggle');
+
+        const navLinks = document.querySelector('.nav-links');
+ 
+        menuToggle.addEventListener('click', () => {
+
+            navLinks.classList.toggle('active');
+
+        });
+</script>
+</body>
+</html>
+ 
